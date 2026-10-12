@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku — The Puzzle Book</title>
+<meta name="description" content="A puzzle-book styled Sudoku with four difficulty levels, hints, and a built-in solver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desk">
+
+  <div class="book" id="book">
+
+    <!-- Bookmark tabs = difficulty levels -->
+    <div class="bookmarks" id="bookmarks" role="tablist" aria-label="Difficulty level">
+      <button class="bookmark" data-level="easy" role="tab" aria-selected="false">
+        <span class="bookmark-label">I</span><span class="bookmark-name">Easy</span>
+      </button>
+      <button class="bookmark" data-level="medium" role="tab" aria-selected="false">
+        <span class="bookmark-label">II</span><span class="bookmark-name">Medium</span>
+      </button>
+      <button class="bookmark" data-level="hard" role="tab" aria-selected="false">
+        <span class="bookmark-label">III</span><span class="bookmark-name">Hard</span>
+      </button>
+      <button class="bookmark" data-level="expert" role="tab" aria-selected="false">
+        <span class="bookmark-label">IV</span><span class="bookmark-name">Expert</span>
+      </button>
+    </div>
+
+    <div class="page">
+
+      <header class="page-header">
+        <p class="eyebrow">Volume I — No. <span id="puzzleNo">001</span></p>
+        <h1>Sudoku</h1>
+        <p class="tagline">Fill the grid. Break the deadlock. Or let the solver do the ink work.</p>
+      </header>
+
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-label">Time</span>
+          <span class="stat-value" id="timer">00:00</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Mistakes</span>
+          <span class="stat-value" id="mistakes">0 / 3</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Hints left</span>
+          <span class="stat-value" id="hintsLeft">3</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Level</span>
+          <span class="stat-value" id="levelLabel">Easy</span>
+        </div>
+      </div>
+
+      <div class="grid-wrap">
+        <div class="sudoku-grid" id="grid" role="grid" aria-label="Sudoku grid"></div>
+        <div class="stamp" id="stamp">Solved</div>
+      </div>
+
+      <div class="controls">
+        <div class="numpad" id="numpad" aria-label="Number pad"></div>
+
+        <div class="actions">
+          <button class="btn btn-ghost" id="notesBtn" aria-pressed="false">
+            <span class="btn-icon">✎</span> Notes
+          </button>
+          <button class="btn btn-ghost" id="eraseBtn">
+            <span class="btn-icon">⌫</span> Erase
+          </button>
+          <button class="btn btn-ghost" id="hintBtn">
+            <span class="btn-icon">◆</span> Hint
+          </button>
+          <button class="btn btn-outline" id="newBtn">New Puzzle</button>
+          <button class="btn btn-solid" id="solveBtn">Solve for me</button>
+        </div>
+      </div>
+
+      <p class="footnote" id="message" aria-live="polite"></p>
+
+    </div>
+  </div>
+
+  <p class="credit">Open-source Sudoku — generate, play, and solve, entirely in the browser.</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
